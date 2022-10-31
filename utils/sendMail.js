@@ -25,7 +25,7 @@ module.exports = async (user, mailType) => {
     await token.save();
     let mailOptions, emailContent;
     if (mailType === "verifyemail") {
-      emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="http://localhost:3000/verifyemail/${encryptedToken}">${encryptedToken}</a>  </div>`;
+      emailContent = `<div><h1>Please click on the below link to verify your email address</h1> <a href="https://doctor-online-booking.herokuapp.com/verifyemail/${encryptedToken}">${encryptedToken}</a>  </div>`;
 
       mailOptions = {
         from: "shanshangeeth@gmail.com",
@@ -34,7 +34,7 @@ module.exports = async (user, mailType) => {
         html: emailContent,
       };
     } else {
-      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="http://localhost:3000/resetpassword/${encryptedToken}">${encryptedToken}</a>  </div>`;
+      emailContent = `<div><h1>Please click on the below link to reset your password</h1> <a href="https://doctor-online-booking.herokuapp.com/resetpassword/${encryptedToken}">${encryptedToken}</a>  </div>`;
 
       mailOptions = {
         from: "shanshangeeth@gmail.com",
